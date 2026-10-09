@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Factory Production Planner | A7</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="tag">B.TECH MATHEMATICS MINI PROJECT · A7</div>
+    <h1>Factory Production <span>Planner</span></h1>
+    <p>Plan smarter. Understand capacity. Solve with mathematics.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <h2>Production Inputs</h2>
+          <p>Enter machine hours required per product and available hours.</p>
+        </div>
+        <button id="sampleBtn" class="secondary">Load Sample</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Machine</th>
+              <th>Product A<br><small>Hours/unit</small></th>
+              <th>Product B<br><small>Hours/unit</small></th>
+              <th>Product C<br><small>Hours/unit</small></th>
+              <th>Available Hours</th>
+            </tr>
+          </thead>
+          <tbody id="inputRows"></tbody>
+        </table>
+      </div>
+
+      <button id="calculateBtn" class="primary">
+        Calculate Production Plan →
+      </button>
+      <p class="hint">Model: Ax = b · Linear algebra · Matrix rank · Consistency</p>
+    </section>
+
+    <section id="results" class="results" hidden>
+      <div class="stats">
+        <article class="stat">
+          <span>Rank of A</span>
+          <strong id="rankA">—</strong>
+        </article>
+        <article class="stat">
+          <span>Rank of [A | b]</span>
+          <strong id="rankAug">—</strong>
+        </article>
+        <article class="stat">
+          <span>Consistency</span>
+          <strong id="consistency">—</strong>
+        </article>
+      </div>
+
+      <article class="card">
+        <h2>Mathematical Result</h2>
+        <div id="resultMessage" aria-live="polite"></div>
+        <div id="productionResult"></div>
+      </article>
+
+      <div class="charts">
+        <article class="card">
+          <h2>Machine Requirements</h2>
+          <p class="muted">Hours required to produce one unit.</p>
+          <canvas id="heatChart"></canvas>
+        </article>
+        <article class="card">
+          <h2>Available vs Required Hours</h2>
+          <p class="muted">Shown only when a unique, nonnegative plan exists.</p>
+          <canvas id="capacityChart"></canvas>
+          <p id="chartNote" class="muted"></p>
+        </article>
+      </div>
+
+      <article class="card">
+        <h2>How to Interpret the Result</h2>
+        <div id="interpretation"></div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Factory Production Planner (A7) · CSM · Powered by mathematics</p>
+      <p>This educational model uses exact machine-hour equalities, not a complete factory optimizer.</p>
+    </footer>
+  </main>
+</body>
+</html>
